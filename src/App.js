@@ -65,15 +65,50 @@ import { useState } from "react";//ứng dụng đếm số
 // }
 
 //two ways binding
-// <input />
-function App() {
-    const [value, setValue] = useState()
-    console.log(value)
-    
-    return (
-        <div className="App" style={{ padding: 100 }}>
-            <h2>bla bla input</h2>
-            <input onChange={(e) => setValue(e.target.value)} />
+// <input />, phan 1
+// function App() {
+//     const [name, setName] = useState('')
+//     const [email, setEmail] = useState('')
+//     console.log({ name, email })
+//     const handleShowInFo = () => {
+//         console.log({ name, email })
+
+//     }
+//     return (
+//         <div className="App" style={{ padding: 100 }}>
+//             <input
+//                 // value={name}
+//                 onChange={(typingNameValue) => setName(typingNameValue.target.value)}
+
+//             /><br></br>
+//             <input
+//                 // value={email}
+//                 onChange={(typingEmailValue) => setEmail(typingEmailValue.target.value)}
+//             />
+//             <button onClick={handleShowInFo}>Show info</button>
+//         </div>
+//     )
+// }
+
+
+//two ways binding
+// <input />, phan 2
+function App(){
+    const [name, setName] = useState('');
+    const [email, setEmail] = useState('');
+    const handleShowInfo = () => {
+        console.log({name, email});
+    }
+    return(
+        <div className="App" style={{padding: 200}}>
+            <input
+                onChange={(typingValue) => setName(typingValue.target.value)}
+            />
+            <br></br>
+            <input
+            onChange={(typingValue) => setEmail(typingValue.target.value)}
+            />
+            <button onClick={handleShowInfo}>Show Info</button>
         </div>
     )
 }
