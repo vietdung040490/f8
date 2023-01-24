@@ -1,17 +1,12 @@
-import UseStateF8 from "./Compomnents/f8/UseStateF8";
-import InputRadio from "./Compomnents/f8/InputRadio";
-import InputCheckBox from "./Compomnents/f8/InputCheckBox";
+import UseEffectCompo from "./Compomnents/f8/UseEffect/UseEffectCompo";
+import UseStateCompo from "./Compomnents/f8/UseState/UseStateCompo";
 
 
 function App() {
     return (
         <div style={{ padding: 100 }}>
-            <UseStateF8 />
-            <br></br>
-            <InputRadio />
-            <br></br>
-            <InputCheckBox />
-            <br></br>
+            <UseStateCompo />
+            <UseEffectCompo />
         </div>
     )
 }

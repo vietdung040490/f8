@@ -119,7 +119,8 @@ function UseStateF8() {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const handleGetInfo = () => {
-        console.log({ name, email })
+        alert(name)
+        alert(email)
     }
 
     return (
