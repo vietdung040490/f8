@@ -5,6 +5,7 @@ function UseEffect() {
     const [title, setTitle] = useState('');//chức năng update title html
     const [posts, setPosts] = useState([]);
     const [typeButton, setTypeButton] = useState('posts')
+    const [showGoToTop, setShowGoToTop] = useState(false)
 
     useEffect(() => {//lay gia tri cua typeButton
         fetch(`https://jsonplaceholder.typicode.com/${typeButton}`)
@@ -12,12 +13,16 @@ function UseEffect() {
             .then(posts => {
                 setPosts(posts)
             })
-        
+
     }, [typeButton])// dependence: typeButton thay đổi giá trị thì useEffect() chạy một lần
 
-    useEffect(() => {// lắng nghe sự kiện 
-        
-    })
+    useEffect(() => {// lắng nghe sự kiện Dom
+        const handleScroll = () => {
+            setShowGoToTop(window.scrollY >= 250)
+            console.log(window.scrollY)
+        }
+        window.addEventListener('scroll', handleScroll)
+    }, [])
     return (
         <div>
             {types.map(type => (
@@ -43,6 +48,14 @@ function UseEffect() {
                 <li>{post.title || post.name}</li>
             ))}
             </ul>
+            {showGoToTop &&
+                <button
+                    style={{
+                        position: 'fixed',
+                        right: 10,
+                        bottom: 20
+                    }}
+                >Up to top</button>}
         </div>
     )
 }

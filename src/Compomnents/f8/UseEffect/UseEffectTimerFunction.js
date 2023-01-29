@@ -8,7 +8,6 @@ function UseEffectTimerFunction() {
 		}, 1000);
 		return () => clearInterval(setInt)
 	}, [])
-	console.log(number)
 
 	return (
 		<h2>{number}</h2>

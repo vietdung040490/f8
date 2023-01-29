@@ -1,10 +1,11 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import UseEffect from "./UseEffect";
 import UseEffectTimerFunction from "./UseEffectTimerFunction"
 
 function UseEffectCompo() {
     const [toggle, setToggleValue] = useState(false);
+    
     return (
         <div>
             <br></br>
